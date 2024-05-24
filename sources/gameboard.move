@@ -26,26 +26,26 @@ module suicards::gameboard {
         game_over: bool,
     }
 
-    //TODO Bonus Points have streak time, quick answer, etc
-
-
     // ENTRY FUNCTIONS
+    public fun Init_game(random_number: vector<u8>): GameBoard{
+        
+        let game_board = GameBoard {
+            score: 0,
+            last_phase:  0,
+            Bonus_points: 0,
+            game_over: false
+        };
 
-
-    // public fun init(ctx: &mut sui::tx_context::TxContext) {
-    
-    // }
-
-    public struct A {
-        a: u64,
+        game_board
     }
 
-    public fun caculate(): u64{
-        let mut x  = 10;
-        let y  = &mut x;
 
-        x
+    public fun get_score(points: &GameBoard): &u64{
+        &points.score
     }
+
+
+
 
     #[test]
     #[expected_failure]
